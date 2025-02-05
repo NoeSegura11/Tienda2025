@@ -12,3 +12,45 @@
 .parrafoRojo {
     color: red;
 }
+
+.ejemploPadding{
+    /* Padding a los 4 lados*/
+    padding: 10xp;
+    /*Arriba/Abajo - Derecha-Izquierda*/
+    padding: 10px 20px;
+    /*Arriba/Izquierda - Derecha/Abajo*/
+    padding: 10px 20px 30px;
+    /*Arriba/Derecha - Abajo/Izquierda*/
+    padding: 10px 20px 30px 40px;
+    
+    margin-bottom: 40px;
+}
+
+/*Selector de elemento*/
+/*p, h1, div {
+background color: antiquewhite;
+}*/
+
+/*Selector descendente*/
+/*div p.sdfsgf {
+ font-size: 50x;
+}*/
+
+/* ANCLAS */
+a {
+    font-size: 20px;
+}
+
+a:hover {
+    color: red;
+    transition: 5s;
+}
+
+a:visited {
+    color: green;
+}
+
+a:active {
+    color: white;
+    background: black;
+}

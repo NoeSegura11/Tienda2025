@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Productos de Computadoras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">TechShop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor principal -->
+    <div class="container mt-4">
+        <h1 class="mb-4">Listado de Productos</h1>
+
+        <!-- Alerta -->
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <i class="bi bi-info-circle-fill me-2"></i> ¡Nuevos productos disponibles!
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+
+        <!-- Formulario de búsqueda -->
+        <form class="mb-4">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Buscar productos...">
+                <button class="btn btn-primary" type="submit">Buscar</button>
+            </div>
+        </form>
+
+        <!-- Grid system para productos -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Tarjeta de producto 1 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://i.blogs.es/a19284/framw/1366_2000.jpeg" class="card-img-top" alt="Laptop">
+                    <div class="card-body">
+                        <h5 class="card-title">Laptop Pro</h5>
+                        <p class="card-text">Potente laptop para profesionales.</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal">
+                            Ver detalles
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Tarjeta de producto 2 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://i.blogs.es/a19284/framw/1366_2000.jpeg" class="card-img-top" alt="Desktop">
+                    <div class="card-body">
+                        <h5 class="card-title">Desktop Gamer</h5>
+                        <p class="card-text">Potente PC de escritorio para gaming.</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal">
+                            Ver detalles
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Tarjeta de producto 3 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://i.blogs.es/a19284/framw/1366_2000.jpeg" class="card-img-top" alt="Tablet">
+                    <div class="card-body">
+                        <h5 class="card-title">Tablet Ultra</h5>
+                        <p class="card-text">Tablet ligera y versátil para profesionales.</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal">
+                            Ver detalles
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Tarjeta de producto 4 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://i.blogs.es/a19284/framw/1366_2000.jpeg" class="card-img-top" alt="Monitor">
+                    <div class="card-body">
+                        <h5 class="card-title">Monitor 4K</h5>
+                        <p class="card-text">Monitor de alta resolución para diseñadores.</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal">
+                            Ver detalles
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de especificaciones -->
+        <h2 class="mt-5 mb-3">Especificaciones Técnicas</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Modelo</th>
+                    <th>CPU</th>
+                    <th>RAM</th>
+                    <th>Almacenamiento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Laptop Pro</td>
+                    <td>Intel i7</td>
+                    <td>16GB</td>
+                    <td>512GB SSD</td>
+                </tr>
+                <tr>
+                    <td>Desktop Gamer</td>
+                    <td>AMD Ryzen 9</td>
+                    <td>32GB</td>
+                    <td>1TB NVMe + 2TB HDD</td>
+                </tr>
+                <tr>
+                    <td>Tablet Ultra</td>
+                    <td>Apple M1</td>
+                    <td>8GB</td>
+                    <td>256GB SSD</td>
+                </tr>
+                <tr>
+                    <td>Monitor 4K</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Dropdown y List group -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>Categorías</h3>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                        Seleccionar categoría
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Laptops</a></li>
+                        <li><a class="dropdown-item" href="#">Desktops</a></li>
+                        <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>Marcas Populares</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Dell</li>
+                    <li class="list-group-item">HP</li>
+                    <li class="list-group-item">Lenovo</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <h2 class="mb-4">Formulario de Contacto</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono">
+                    </div>
+                    <div class="mb-3">
+                        <label for="producto" class="form-label">Producto de interés</label>
+                        <select class="form-select" id="producto">
+                            <option selected>Seleccione un producto</option>
+                            <option value="1">Laptop Pro</option>
+                            <option value="2">Desktop Gamer</option>
+                            <option value="3">Tablet Ultra</option>
+                            <option value="4">Monitor 4K</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label">Fecha de contacto preferida</label>
+                        <input type="date" class="form-control" id="fecha">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Aquí irían los detalles completos del producto seleccionado.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

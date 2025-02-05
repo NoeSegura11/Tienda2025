@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/menu.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <section>
+            <h2>Ejemplo de formularios</h2>
+            <br />
+            <form action="#">
+                <label>button </label><input type="button" name="btnConfirmacion" value="Enviar" id="button" /><br>
+                <label>checkbox </label> <input type="checkbox" name="checkbox" /><span>Terminos y condiciones</span><br>
+                <label>color </label><input type="color" name="color" value="#00ff91" /><br>
+                <label>textarea </label><textarea name="Ejemplo" rows="5" cols="50"></textarea><br>
+                <label>date </label><input type="date" name="date" min="2022-01-01" max="2024-12-31"><br>
+                <label>datetime-local </label><input type="datetime-local" name="datetime-local"><br>
+                <label>dtime </label><input type="time" name="time"><br>
+                <label>email </label><input type="email" name="email" placeholder="Digite el email"><br>
+                <label>file </label><input type="file" name="file" accept="image/png,image/jpeg"><br>
+                <label>hidden </label><input type="hidden" name="hidden" value="sdfdsf-sdfdsf-fjghj565-65245"><br>
+                <label>search </label><input type="search" name="search" placeholder="criterio de busqueda"><br>
+                <label>tel </label><input type="tel" name="tel" placeholder="8888-8888"><br>
+
+                <label>text </label><input type="text" name="text" placeholder="Ejemplo" size="50"><br>
+                <label>time </label><input type="time" name="time"><br>
+                <label>url </label><input type="url" name="url" placeholder=""><br>
+
+                <label>week </label><input type="week" name="week"><br>
+                <label>month </label><input type="month" name="month"><br>
+                <label>number </label><input type="number" name="number"><br>
+
+                <label>password </label><input type="password" name="password"><br>
+
+                <label>radio </label>Valor 1<input type="radio" name="radioPrueba" value="1"><br>
+                <label>radio </label>Valor 2<input type="radio" name="radioPrueba" value="2"><br>
+                <label>radio </label>Valor 3<input type="radio" name="radioPrueba" value="3"><br>
+
+                <input type="range" value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
+                <output>24</output><br>
+                <select name="lenguaje">
+                    <option value="1">Java</option>
+                    <option value="2">NET C#</option>
+                    <option value="3">Go</option>
+                </select>
+                <br />
+
+
+                <label>reset </label><input type="reset" name="reset" value="Limpiar"><br>
+
+                <label>Submit </label><input type="submit" value="Submit"><br>
+            </form>
+        </section>
+    </body>
+</html>
