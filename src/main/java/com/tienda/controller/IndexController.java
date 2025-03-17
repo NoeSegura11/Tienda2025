@@ -3,7 +3,10 @@ package com.tienda.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+/**
+ *
+ * @author PC
+ */
 @Controller
 public class IndexController {
 
@@ -12,9 +15,5 @@ public class IndexController {
         model.addAttribute("attribute", "value");
         return "index";
     }
-    @RequestMapping("/informacion")
-    public String contacto(Model model) {
-        return "contacto";
-    }
-
+   
 }

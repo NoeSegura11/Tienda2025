@@ -3,15 +3,15 @@
 package com.tienda.domain;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import java.io.Serializable;
 import java.util.List;
-import lombok.Data;
 
-@Data //autogenera sets y gets por debajo
+@Data //Generar getters y setters 
 @Entity
-@Table (name = "categoria")
-public class Categoria implements Serializable{
-
+@Table(name = "categoria")
+public class Categoria implements Serializable {
+    
     private static final long serialVersionUID = 1L;
     
     @Id
@@ -23,15 +23,19 @@ public class Categoria implements Serializable{
     private boolean activo;
     
     @OneToMany
-    @JoinColumn(name = "ideCategoria", insertable = false, updatable = false)
+    @JoinColumn(name = "idCategoria", insertable = false, updatable = false)
     private List<Producto> productos;
     
-public Categoria() {
-}
-
-public Categoria(String descripcion, String rutaImagen, boolean activo) {
-    this.descripcion = descripcion;
-    this.rutaImagen = rutaImagen;
-    this.activo = activo;
-}
+    public Categoria()
+    {
+        
+    }
+    
+    public Categoria(String descripcion, String rutaImagen, boolean activo)
+    {
+        this.descripcion = descripcion;
+        this.rutaImagen = rutaImagen;
+        this.activo = activo;
+    }
+    
 }
