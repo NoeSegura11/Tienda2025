@@ -1,4 +1,3 @@
-
 package com.tienda.controller;
 
 import com.tienda.domain.Categoria;
@@ -22,39 +21,39 @@ public class ProductoController {
 
     @Autowired
     private ProductoService productoService;
-    
+
     @Autowired
     private CategoriaService categoriaService;
-    
+
     @Autowired
     private FirebaseStorageServiceImpl firebaseStorageService;
-    
+
     @RequestMapping("/listado")
     public String page(Model model) {
         List<Producto> productos = productoService.getProductos(false);
         List<Categoria> listaCategoriasActivas = categoriaService.getCategorias(true);
-        
+
         model.addAttribute("productos", productos);
         model.addAttribute("totalProductos", productos.size());
         model.addAttribute("categorias", listaCategoriasActivas);
         return "/producto/listado";
     }
-    
+
     @PostMapping("/guardar")
     public String productoGuardar(Producto producto,
-            @RequestParam("imagenFile") MultipartFile imagenFile) {        
+            @RequestParam("imagenFile") MultipartFile imagenFile) {
         if (!imagenFile.isEmpty()) {
             productoService.save(producto);
             producto.setRutaImagen(
                     firebaseStorageService.cargaImagen(
-                            imagenFile, 
-                            "producto", 
+                            imagenFile,
+                            "producto",
                             producto.getIdProducto()));
         }
         productoService.save(producto);
         return "redirect:/producto/listado";
     }
-    
+
     @GetMapping("/eliminar/{idProducto}")
     public String productoEliminar(Producto producto) {
         productoService.delete(producto);
@@ -70,4 +69,12 @@ public class ProductoController {
         return "/producto/modifica";
     }
 
+    @PostMapping("/consulta")
+    public String consultaQuery(@RequestParam(value = "descripcionCon") String descripcionCon, Model model) {
+        var productos = productoService.filtrarDescripcion(descripcionCon);
+        model.addAttribute("productos", productos);
+        model.addAttribute("descripcionCon", descripcionCon);
+        model.addAttribute("totalProductos", productos.size());
+        return "/producto/listado";
+    }
 }

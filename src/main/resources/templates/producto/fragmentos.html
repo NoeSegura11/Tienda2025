@@ -233,6 +233,23 @@
                 </div>
             </div>
         </section>
-
+        <!-- 3 Sección para crear filtro tarea -->
+        <section th:fragment="filtros">
+            <div class="row py-2 mb-3">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-3">
+                    <form method="POST" th:action="@{/producto/consulta}"
+                          class="was-validated">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-primary text-primary" placeholder="Consulta tu producto"
+                                   th:value="${descripcionCon}" th:name="descripcionCon">
+                                <button class="btn btn-outline-primary" act type="submit">Consultar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
