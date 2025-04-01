@@ -5,15 +5,12 @@
     <body>
         <header th:replace="layout/plantilla :: header"></header>
         
+        <section th:replace="producto/fragmentos :: listadoProductos"/>
+        
         <section th:replace="producto/fragmentos :: botonesAgregar"/>
         
-        <section th:replace="producto/fragmentos :: filtros"/>
-        
         <section th:replace="producto/fragmentos :: agregarProducto"/>
-        
-        <section th:replace="producto/fragmentos :: listadoProductos"/>
         
         <footer th:replace="layout/plantilla :: footer"></footer>
     </body>
 </html>
-

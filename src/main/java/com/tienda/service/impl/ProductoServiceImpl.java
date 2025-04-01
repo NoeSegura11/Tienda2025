@@ -52,29 +52,31 @@ public class ProductoServiceImpl implements ProductoService {
     public List<Producto> buscarPorExistenciasYPrecio(int existencias, double precio) {
         return productoDao.findByExistenciasAndPrecio(existencias, precio);
     }
-
+    
     // Lista de productos con precio entre ordendados por descripción ConsultaAmpliada
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly=true)
     public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup) {
-        return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
+      return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
     }
-
+    
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly=true)    
     public List<Producto> metodoJPQL(double precioInf, double precioSup) {
         return productoDao.metodoJPQL(precioInf, precioSup);
     }
-
+    
     @Override
-    @Transactional(readOnly = true)
+    @Transactional(readOnly=true)    
     public List<Producto> metodoNativo(double precioInf, double precioSup) {
         return productoDao.metodoNativo(precioInf, precioSup);
     }
     
     @Override
-    @Transactional(readOnly = true)
-    public List<Producto> filtrarDescripcion(String descripcion) {
-        return productoDao.findByDescripcionContainingOrderByDescripcionDesc(descripcion);
+    @Transactional(readOnly=true)    
+    public List<Producto> metodoNativoExistencias(int existencias) {
+        return productoDao.metodoNativoExistencias(existencias);
     }
 }
+
+

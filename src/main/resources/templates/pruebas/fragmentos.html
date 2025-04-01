@@ -150,10 +150,38 @@
                                 <button type="submit" class="btn btn-warning">
                                     <i class="fas fa-check"></i> [[#{pruebas.nativo}]]
                                 </button>
-                            </div> 
+                            </div>
                         </div>
                     </form>
                 </div>
+            </div>
+        </section>
+            
+            <!-- FILTRO DE TAREA -->
+        <section th:fragment="filtroTarea" class="bg-light">
+            <div class="row py-2">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <form method="POST" th:action="@{/pruebas/queryTarea}" 
+                          class="was-validated">
+                        <div class="card">                            
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="existencias">[[#{producto.existencias}]]</label>
+                                    <input type="number" class="form-control" 
+                                           th:value="${existencias}"
+                                           th:name="existencias" required="true"/>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-check"></i> [[#{pruebas.nativo}]]
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>   
+            </div>
         </section>
     </body>
 </html>

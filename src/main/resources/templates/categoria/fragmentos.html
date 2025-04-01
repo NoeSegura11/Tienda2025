@@ -24,7 +24,7 @@
         </section>
 
         <!-- 2 Fragmento para agregar categoria, es la ventana modal -->
-        <section th:fragment="agregarCategoria">
+        <section th:fragment="agregarCategoria" sec:authorize="hasRole('ROLE_ADMIN')">
             <div id="agregarCategoria" 
                  class="modal fade" 
                  tabindex="-1" 
@@ -84,7 +84,7 @@
                                             <td>[[${contador.count}]]</td>
                                             <td>[[${categoria.descripcion}]]</td>
                                             <td th:text="${categoria.activo} ? 'Activa' : 'Inactiva'" />
-                                            <td><a th:href="@{/categoria/eliminar/}+${categoria.idCategoria}"
+                                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/categoria/eliminar/}+${categoria.idCategoria}"
                                                    class="btn btn-danger">
                                                     <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a>
                                                 <a th:href="@{/categoria/modificar/}+${categoria.idCategoria}"
@@ -187,3 +187,4 @@
         </section>
     </body>
 </html>
+
