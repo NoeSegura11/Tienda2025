@@ -33,7 +33,7 @@ public class RegistroController {
     }
 
     @PostMapping("/crearUsuario")
-    public String crearUsuario(Model model, Usuario usuario) 
+    public String crearUsuario(Model model, Usuario usuario)
             throws MessagingException {
         model = registroService.crearUsuario(model, usuario);
         return "/registro/salida";
@@ -41,8 +41,8 @@ public class RegistroController {
 
     @GetMapping("/activacion/{usuario}/{id}")
     public String activar(
-            Model model, 
-            @PathVariable(value = "usuario") String usuario, 
+            Model model,
+            @PathVariable(value = "usuario") String usuario,
             @PathVariable(value = "id") String id) {
         model = registroService.activar(model, usuario, id);
         if (model.containsAttribute("usuario")) {
@@ -54,14 +54,14 @@ public class RegistroController {
 
     @PostMapping("/activar")
     public String activar(
-            Usuario usuario, 
+            Usuario usuario,
             @RequestParam("imagenFile") MultipartFile imagenFile) {
         registroService.activar(usuario, imagenFile);
         return "redirect:/";
     }
 
     @PostMapping("/recordarUsuario")
-    public String recordarUsuario(Model model, Usuario usuario) 
+    public String recordarUsuario(Model model, Usuario usuario)
             throws MessagingException {
         model = registroService.recordarUsuario(model, usuario);
         return "/registro/salida";

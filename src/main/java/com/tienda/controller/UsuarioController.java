@@ -38,7 +38,7 @@ public class UsuarioController {
 
     @PostMapping("/guardar")
     public String usuarioGuardar(Usuario usuario,
-            @RequestParam("imagenFile") MultipartFile imagenFile) {
+                                 @RequestParam("imagenFile") MultipartFile imagenFile) {
 
         boolean nuevo = true;
         // Validar si es una creación o modificación (Si trae ID)
@@ -52,12 +52,12 @@ public class UsuarioController {
             if (imagenFile.isEmpty()){
                 usuario.setRutaImagen(actual.getRutaImagen());
             }
-        } 
+        }
         else {
             usuario.setPassword(new BCryptPasswordEncoder().encode(usuario.getPassword()));
             usuario.setActivo(true); // Para crearlo siempre activo
         }
-        
+
         if (!imagenFile.isEmpty()) {
             usuarioService.save(usuario, false);
             usuario.setRutaImagen(

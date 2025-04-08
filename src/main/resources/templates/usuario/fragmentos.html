@@ -10,11 +10,11 @@
         <section th:fragment="botonesAgregar" class="py-4 mb-4 bg-light">
             <div class="container" sec:authorize="hasRole('ROLE_ADMIN')">
                 <div class="row">
-                    <div class="col-md-3">   
-                        <button 
-                            type="button" 
-                            class="btn btn-primary btn-block" 
-                            data-bs-toggle="modal" 
+                    <div class="col-md-3">
+                        <button
+                            type="button"
+                            class="btn btn-primary btn-block"
+                            data-bs-toggle="modal"
                             data-bs-target="#agregarUsuario">
                             <i class="fas fa-plus"></i> [[#{usuario.agregar}]]
                         </button>
@@ -25,20 +25,20 @@
 
         <!-- 2 Fragmento para agregar usuario, es la ventana modal -->
         <section th:fragment="agregarUsuario">
-            <div id="agregarUsuario" 
-                 class="modal fade" 
-                 tabindex="-1" 
-                 aria-labelledby="exampleModalLabel" 
+            <div id="agregarUsuario"
+                 class="modal fade"
+                 tabindex="-1"
+                 aria-labelledby="exampleModalLabel"
                  aria-hidden="true">
                 <div class="modal-dialog modal-md">
                     <div class="modal-content">
                         <div class="modal-header bg-info text-white">
                             <h5 class="modal-title">[[#{usuario.agregar}]]</h5>
-                            <button type="button" 
-                                    class="btn-close" 
-                                    data-bs-dismiss="modal" 
+                            <button type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
                                     aria-label="Close"></button>
-                        </div> 
+                        </div>
                         <form th:action="@{/usuario/guardar}" th:object="${usuario}"
                               method="POST" class="was-validated"
                               enctype="multipart/form-data">
@@ -128,7 +128,7 @@
                                 <h3>[[#{usuario.total}]]</h3>
                                 <h4 class="fs-2"><i class="fas fa-users"></i> [[${totalUsuarios}]]</h4>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>
@@ -156,25 +156,25 @@
                                             <div class="card-body">
                                                 <div class="mb-3">
                                                     <label for="nombre">[[#{usuario.nombre}]]</label>
-                                                    <input type="text" class="form-control" 
+                                                    <input type="text" class="form-control"
                                                            name="nombre" th:field="*{nombre}"
                                                            required="true">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="apellidos">[[#{usuario.apellidos}]]</label>
-                                                    <input type="text" class="form-control" 
+                                                    <input type="text" class="form-control"
                                                            name="apellidos" th:field="*{apellidos}"
                                                            required="true">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="email">[[#{usuario.correo}]]</label>
-                                                    <input type="email" class="form-control" 
+                                                    <input type="email" class="form-control"
                                                            name="correo" th:field="*{correo}"
                                                            required="true">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="telefono">[[#{usuario.telefono}]]</label>
-                                                    <input type="tel" class="form-control" 
+                                                    <input type="tel" class="form-control"
                                                            name="telefono" th:field="*{telefono}">
                                                 </div>
                                                 <div class="mb-3">
@@ -202,7 +202,7 @@
                             <i class="fas fa-arrow-left"></i> [[#{accion.regresar}]]
                         </a>
                     </div>
-                    <div class="col-md-4 d-grid" sec:authorize="hasRole('ROLE_ADMIN')">                                
+                    <div class="col-md-4 d-grid" sec:authorize="hasRole('ROLE_ADMIN')">
                         <a th:href="@{/usuario/eliminar/}+${usuario.idUsuario}"
                            class="btn btn-danger">
                             <i class="fas fa-trash"></i> [[#{accion.eliminar}]]

@@ -15,16 +15,16 @@ public class CorreoServiceImpl implements CorreoService {
     private JavaMailSender mailSender;
 
     @Override
-      public void enviarCorreoHtml(
-              String para, 
-              String asunto, 
-              String contenidoHtml) 
-              throws MessagingException {
-          
+    public void enviarCorreoHtml(
+            String para,
+            String asunto,
+            String contenidoHtml)
+            throws MessagingException {
+
         MimeMessage message = mailSender.createMimeMessage();
-        MimeMessageHelper helper 
-                = new MimeMessageHelper(message, 
-                        true);
+        MimeMessageHelper helper
+                = new MimeMessageHelper(message,
+                true);
         helper.setTo(para);
         helper.setSubject(asunto);
         helper.setText(contenidoHtml,true);

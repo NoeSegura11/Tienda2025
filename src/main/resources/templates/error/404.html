@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://wwww.thymeleaf.org">
 <head th:replace="~{layout/plantilla :: head}">
-    <title>Error 403 - Acceso Prohibido</title>
+    <title>Error 404 - Página no Encontrada</title>
     <meta charset="UTF-8"/>
 </head>
 <body>
@@ -10,9 +10,9 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8 text-center">
-            <div class="alert alert-danger" role="alert">
-                <h2>¡Acceso Denegado!</h2>
-                <p>No tiene permiso para acceder a esta página.</p>
+            <div class="alert alert-warning" role="alert">
+                <h2>¡Oops! Página no Encontrada</h2>
+                <p>La página que buscas no existe o ha sido movida. Por favor verifica la URL o regresa al inicio.</p>
                 <a class="btn btn-primary" href="/" role="button">Volver al Inicio</a>
             </div>
         </div>

@@ -10,16 +10,16 @@
             <div class="row py-4">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" 
-                           aria-current="page" 
+                        <a class="nav-link"
+                           aria-current="page"
                            href="/pruebas/listado"
                            >[[#{pruebas.todas}]]</a>
                     </li>
                     <li th:each="categoria : ${categorias}" class="nav-item">
-                        <a class="nav-link" 
+                        <a class="nav-link"
                            th:href="@{/pruebas/listado/}+${categoria.idCategoria}"
                            >[[${categoria.descripcion}]]</a>
-                    </li>                    
+                    </li>
                 </ul>
             </div>
         </section>
@@ -77,19 +77,19 @@
             <div class="row py-2">
                 <div class="col-md-1"></div>
                 <div class="col-md-3">
-                    <form method="POST" th:action="@{/pruebas/query1}" 
+                    <form method="POST" th:action="@{/pruebas/query1}"
                           class="was-validated">
-                        <div class="card">                            
+                        <div class="card">
                             <div class="card-body">
                                 <div class="mb-3">
                                     <label for="precioInf">[[#{pruebas.precio.inferior}]]</label>
-                                    <input type="number" class="form-control" 
+                                    <input type="number" class="form-control"
                                            th:value="${precioInf}"
                                            th:name="precioInf" required="true"/>
                                 </div>
                                 <div class="mb-3">
                                     <label for="precioSup">[[#{pruebas.precio.superior}]]</label>
-                                    <input type="number" class="form-control" 
+                                    <input type="number" class="form-control"
                                            th:value="${precioSup}"
                                            th:name="precioSup" required="true"/>
                                 </div>
@@ -101,21 +101,21 @@
                             </div>
                         </div>
                     </form>
-                </div>   
+                </div>
                 <div class="col-md-3">
-                    <form method="POST" th:action="@{/pruebas/query2}" 
+                    <form method="POST" th:action="@{/pruebas/query2}"
                           class="was-validated">
-                        <div class="card">                            
+                        <div class="card">
                             <div class="card-body">
                                 <div class="mb-3">
                                     <label for="precioInf">[[#{pruebas.precio.inferior}]]</label>
-                                    <input type="number" class="form-control" 
+                                    <input type="number" class="form-control"
                                            th:value="${precioInf}"
                                            th:name="precioInf" required="true"/>
                                 </div>
                                 <div class="mb-3">
                                     <label for="precioSup">[[#{pruebas.precio.superior}]]</label>
-                                    <input type="number" class="form-control" 
+                                    <input type="number" class="form-control"
                                            th:value="${precioSup}"
                                            th:name="precioSup" required="true"/>
                                 </div>
@@ -129,19 +129,19 @@
                     </form>
                 </div>
                 <div class="col-md-3">
-                    <form method="POST" th:action="@{/pruebas/query3}" 
+                    <form method="POST" th:action="@{/pruebas/query3}"
                           class="was-validated">
                         <div class="card success">
                             <div class="card-body">
                                 <div class="mb-3">
                                     <label for="precioInf">[[#{pruebas.precio.inferior}]]</label>
-                                    <input type="number" class="form-control" 
+                                    <input type="number" class="form-control"
                                            th:value="${precioInf}"
                                            th:name="precioInf" required="true"/>
                                 </div>
                                 <div class="mb-3">
                                     <label for="precioSup">[[#{pruebas.precio.superior}]]</label>
-                                    <input type="number" class="form-control" 
+                                    <input type="number" class="form-control"
                                            th:value="${precioSup}"
                                            th:name="precioSup" required="true"/>
                                 </div>
@@ -154,33 +154,6 @@
                         </div>
                     </form>
                 </div>
-            </div>
-        </section>
-            
-            <!-- FILTRO DE TAREA -->
-        <section th:fragment="filtroTarea" class="bg-light">
-            <div class="row py-2">
-                <div class="col-md-1"></div>
-                <div class="col-md-3">
-                    <form method="POST" th:action="@{/pruebas/queryTarea}" 
-                          class="was-validated">
-                        <div class="card">                            
-                            <div class="card-body">
-                                <div class="mb-3">
-                                    <label for="existencias">[[#{producto.existencias}]]</label>
-                                    <input type="number" class="form-control" 
-                                           th:value="${existencias}"
-                                           th:name="existencias" required="true"/>
-                                </div>
-                            </div>
-                            <div class="card-footer text-center">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-check"></i> [[#{pruebas.nativo}]]
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>   
             </div>
         </section>
     </body>

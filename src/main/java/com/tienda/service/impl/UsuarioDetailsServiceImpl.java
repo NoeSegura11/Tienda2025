@@ -40,11 +40,4 @@ public class UsuarioDetailsServiceImpl implements UsuarioDetailsService, UserDet
         return new User(usuario.getUsername(), usuario.getPassword(), roles);
     }
 }
-//SC-504	Lenguajes de Base de Datos (L - 6 a 9)
-//SC-503	Administración de Base de Datos (K - 6 a 9)
-//SC-502	Ambiente Web Cliente/Servidor (M - 6 a 9)
-//II-240	Probabilidad y Estadística (J - 9 a 12)
-//SC-505	Administración de Proyectos (J - 6 a 9)
-
-
 

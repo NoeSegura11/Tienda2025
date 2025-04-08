@@ -1,19 +1,19 @@
 package com.tienda.domain;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import com.tienda.domain.Categoria;
 import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-@Data //Generar getters y setters 
+@Data //Para crear automatizadamente el get y set
 @Entity
-@Table(name = "producto")
+@Table(name="producto")
 public class Producto implements Serializable {
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_producto")
+    @Column(name="id_producto")
     private Long idProducto;
     private String descripcion;
     private String detalle;
@@ -23,20 +23,18 @@ public class Producto implements Serializable {
     private boolean activo;
 
     @ManyToOne
-    @JoinColumn(name = "idCategoria")
-    private Categoria categoria;  
-    
+    @JoinColumn(name="id_categoria")
+    private Categoria categoria;
+
     public Producto() {
     }
-    
-    public Producto(String descripcion, String detalle, double precio, int existencias, String rutaImagen, boolean activo) {
+
+    public Producto(String descripcion, String detalle, double precio, int existencias, String imagen, boolean activo) {
         this.descripcion = descripcion;
         this.detalle = detalle;
         this.precio = precio;
         this.existencias = existencias;
-        this.rutaImagen = rutaImagen;
+        this.rutaImagen = imagen;
         this.activo = activo;
     }
-    
-    
 }
